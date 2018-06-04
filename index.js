@@ -61,10 +61,10 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  var newTotal = total();
+  var newTotal = total(); // had to get newTotal to equal the returned value that you get after calling the total function
   if(cardNumber === undefined){ // this checks if no cardNumber has been inputted
     return "Sorry, we don't have a credit card on file for you.";
-  }else{ // splice(0) deletes eve
+  }else{ // splice(0) deletes everything starting at index 0 (inclusive)
     cart.splice(0)
     return `Your total cost is $${newTotal}, which will be charged to the card ${cardNumber}.`
   }
